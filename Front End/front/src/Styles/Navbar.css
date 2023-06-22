@@ -1,0 +1,86 @@
+
+@import "./Menu.css";
+@import "./StudentInfo.css";
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--navbar-color);
+  color: white;
+  height: 60px;
+  padding: 2px 20px;
+  position: sticky;
+  top: 0;
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left input{
+    width: 260px;
+      height: 34px;
+      background-color: var(--input-color);
+      margin-left: 10px;
+      font-size: 14px;
+      padding-left: 10px;
+      font-weight: bold;
+      border: 1px solid var(--line-color);
+      color: white;
+
+}
+      
+.left input:focus{
+    width: 400px;
+    transition: width ease-out 0.3s;
+    color: white;
+}
+    
+.center {
+
+    flex: 1;
+    display: flex;
+    gap: 18px;
+    margin-left: 18px;
+    align-items: center;
+    color: white;
+
+    
+}
+.center h2 a {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+.right{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    padding-left: 20px;
+    > *{
+        cursor:pointer;
+    }
+    
+
+    #person{
+        height: 50px;
+            width: 50px;
+        /* object-fit: contain; */
+        border-radius: 50%;
+    }
+}
+
+.rightIcons{
+    display: flex;
+    align-items: center;
+}
+
+
+  
+}

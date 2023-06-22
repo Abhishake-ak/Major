@@ -1,0 +1,155 @@
+
+.main_Right{
+    
+    width: 80%;
+    height: 100vh;
+    background-color: var(--first-color);
+    color: var(--grey-color);
+    /* overflow: hidden; */
+    overflow-y: scroll;
+}
+.main_Right::-webkit-scrollbar{
+    display: none;
+}
+.line{
+    height: 1px;
+    background-color: var(--line-color);
+    width: 100%;
+    margin: 14px 0 20px;
+}
+
+.mainRightContainer{
+    padding: 20px;
+    
+}
+.box{
+    background-color: var(--input-color);
+    border-radius: 4px;
+    padding: 26px;
+    border: 1px solid var(--border-color);
+    margin-top: 30px;
+
+
+}
+.box h2{
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.box p{
+    margin: 16px 0px;
+}
+
+.commentB{
+    position: absolute;
+    right: 28px;
+    bottom: 14px;
+    background-color: var(--input-color);
+    border: 1px solid var(--border-color); 
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+
+}
+
+
+.commentForm{
+    height: 500px;
+    width: 400px;
+    background-color: var(--navbar-color);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+
+.commentForm h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.commentForm label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.commentForm input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid var(--line-color)
+}
+.commentForm textarea{
+    width: 100%;
+    display: block;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.commentForm button{
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.commentBox{
+    padding: 20px;
+    margin: 20px;
+}
+.commentBox h3{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 42px;
+
+}
+.commentBox span{
+margin-left: 20px;
+
+   
+}
+.commentBox p{
+    font-weight: 20px;
+
+}
+
+.commentData{
+   
+    width: 70%;
+}
+  
+.commentData h1{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    left: 50%;
+    position: absolute;
+
+}

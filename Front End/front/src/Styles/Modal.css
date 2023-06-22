@@ -1,0 +1,26 @@
+.modalMain{
+
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.371);
+    backdrop-filter: blur(10px);
+ 
+    padding: 2rem;
+    overflow: hidden;
+
+}
+
+.crossButton{
+
+  text-align: right;
+    width: 100%;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+
+
+}
+

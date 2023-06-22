@@ -1,0 +1,140 @@
+
+.student{
+    height: 110vh;
+   
+    width: 100vw;
+    position: absolute;
+    background-color: var(--first-color);
+    overflow-x: hidden;
+
+
+    
+
+}
+
+.line{
+    height: 1px;
+    background-color: var(--line-color);
+    width: 100%;
+    margin: 14px 0 20px;
+}
+.tittle{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.maininfo{
+    position: relative;
+    top: 40px;
+    background-color: var(--navbar-color);
+    width: 60%;
+    height: 90%;
+    padding: 40px;
+    align-items: center;
+    
+    
+    margin: auto;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    border: 2px solid rgba(255,255,255,0.1);
+
+  
+    
+    
+}
+
+.form1{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    
+    
+
+}
+ .form1 .name{
+    font-size: 20px;
+    color: white;
+    width: 340px;
+    padding: 10px;
+
+}
+.form1 .name input {
+    margin: 10px;  
+    height: 15px;
+    padding: 15px;
+    margin: 10px; 
+    color: var(--grey-color);
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    border: 1px solid var(--line-color)
+
+}
+.form1 .roll{
+    font-size: 20px;
+    color: white;
+    width: 340px;
+    padding: 10px;
+    
+}
+ .form1 .roll input{
+    color: var(--grey-color);
+    height: 15px;
+    padding: 15px;
+    margin: 10px;  
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    
+    border: 1px solid var(--line-color)
+
+}
+
+.form2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 6px;
+    color: white;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+.form2 label{
+    display: block;
+}
+
+.form2 input ,textarea{
+    margin: 10px;
+    color: var(--grey-color);
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    border: 1px solid var(--line-color);
+    
+    width: 50vw;
+    padding: 10px;
+
+}
+
+.form button {
+    position: absolute;
+ 
+    width: 50%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+
+ right:  220px;
+
+ 
+}
+
