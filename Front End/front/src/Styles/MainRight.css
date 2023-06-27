@@ -28,6 +28,7 @@
     padding: 26px;
     border: 1px solid var(--border-color);
     margin-top: 30px;
+    
 
 
 }
@@ -36,9 +37,23 @@
     margin-bottom: 8px;
 }
 .box p{
-    margin: 16px 0px;
+    margin: 12px 0px;
 }
+.box a{
+    text-decoration: none;
 
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+  
+}
 .commentB{
     position: absolute;
     right: 28px;
@@ -98,11 +113,22 @@
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
-    border: 1px solid var(--line-color)
+    border: 1px solid var(--line-color) ;
+    color: #e5e5e5;
 }
 .commentForm textarea{
     width: 100%;
     display: block;
+  
+    height: 100px;
+
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid var(--line-color)
 }
 ::placeholder{
     color: #e5e5e5;

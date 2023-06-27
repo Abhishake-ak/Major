@@ -3,8 +3,15 @@ import MainLeft from "./MainLeft";
 import MainRight from "./MainRight";
 import "../../src/Styles/Main.css";
 import Axios from "axios";
+import Welcome from "./Welcome";
+
+
 
 const Main = (props) => {
+
+
+
+
   const [commentData, setCommentData] = useState();
 
   const [titleDescription, setTitleDescription] = useState({});
@@ -22,11 +29,14 @@ const Main = (props) => {
   useEffect(() => {
     getcomment();
   }, [titleDescription]);
+ 
 
   return (
     <div className="main">
+ 
+
       <MainLeft query={props.query} setTitleDescription={setTitleDescription} />
-      <MainRight a={titleDescription} b={commentData} />
+    { Object.keys(titleDescription).length===0 ? <Welcome/> : <MainRight a={titleDescription} b={commentData} /> }  
     </div>
   );
 };

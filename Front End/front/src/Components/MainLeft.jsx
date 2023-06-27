@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 const MainLeft = (props) => {
   const [data, setData] = useState();
 
-  const getTittle = async (name) => {
+  const getTitle = async (name) => {
     await axios.get(`http://localhost:5000/${name}`).then((res) => {
-      // console.log(res.data);
+      // console.log( "Testing asnnnn",res.data);
       props.setTitleDescription(res.data);
     });
   };
@@ -21,7 +21,7 @@ const MainLeft = (props) => {
     getRespons();
   }, []);
 
-  // console.log(typeof props.query);
+ 
 
   return (
     <div className="main_left">
@@ -36,7 +36,7 @@ const MainLeft = (props) => {
             )
             .map((item) => (
               <div className="items">
-                <h2 key={item._id} onClick={() => getTittle(item.name1)}>
+                <h2 key={item._id} onClick={() => getTitle(item.name1)}>
                   {" "}
                   ◉ {`${item.name1} ${item.name2} ${item.name3}`}
                 </h2>

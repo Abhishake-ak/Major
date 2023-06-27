@@ -1,6 +1,6 @@
 
 .student{
-    height: 110vh;
+    height: 120vh;
    
     width: 100vw;
     position: absolute;
@@ -19,7 +19,7 @@
     margin: 14px 0 20px;
 }
 .tittle{
-    font-size: 32px;
+    font-size: 50px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
@@ -28,6 +28,11 @@
     letter-spacing: 0.5px;
     outline: none;
     border: none;
+}
+.tittle p{
+    font-size: 20px;
+    font-weight: 500;
+
 }
 .maininfo{
     position: relative;

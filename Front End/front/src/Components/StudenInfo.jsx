@@ -1,64 +1,69 @@
-import React, { useState, useRef } from "react";
-import Axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const StudenInfo = () => {
   const navigate = useNavigate();
-  // const[fileData,setFileData] = useState();
-  const [data, setData] = useState({
-    name1: "",
-    name2: "",
-    name3: "",
-    roll1: "",
-    roll2: "",
-    roll3: "",
-    tittle: "",
-    description: "",
-    
-    
+  const [form, setform] = useState({});
+  const [deadline, setDeadline] = useState('');
+  
+  const handleChange = (e) =>{
+    if(e.target.name === 'file'){
+      setform({
+        ...form, 
+        [e.target.name]: e.target.files[0]
+      })
+    } else {
+      setform({
+        ...form, 
+        [e.target.name]: e.target.value
+      })
+    }
+  }
 
-  });
- 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
-   
-   
 
-      await Axios.post("http://localhost:5000/details", 
-     data
-    ).then((res) => {
+    const fileFormData = new FormData()
+    for(const key in form){
+      fileFormData.append(key,form[key])
+    }
+
+    await axios.post("http://localhost:5000/details", fileFormData).then((res) => {
       console.log(res);
-      console.log(data);
     });
-    
-    
-   
-    navigate("/");
+
+    await navigate("/");
   };
 
-  const handle = (e) => {
-    console.log(e.target.value);
-    const s = e.target.name;
-    const value = e.target.value;
-    setData({ ...data, [s]: value });
-  
-  };
+  useEffect(() => {
+    const storedDeadline = localStorage.getItem('deadline');
+    if (storedDeadline) {
+      setDeadline(storedDeadline);
+    }
+  }, []);
+  function hasDeadlinePassed(deadline) {
+    const currentDate = new Date();
+    const deadlineDate = new Date(deadline);
 
-//  console.log(fileData);
-  
+    return currentDate > deadlineDate;
+  }
 
   return (
     <div className="student">
       <div className="maininfo">
-        <div className="tittle"> Student information </div>
+        <div className="tittle"> Student information 
+        { localStorage.getItem("deadline")!==null && (hasDeadlinePassed(deadline) ? (
+        <p>The deadline has passed.</p>
+      ) : (
+        <p>The deadline has not passed yet , last date for submission {localStorage.getItem("deadline")}.</p>
+      ))}
+      </div>
         <div className="line"> </div>
         <form
           className="form"
           onSubmit={handleSubmit}
-          enctype="multipart/form-data"
-      
+          encType="multipart/form-data"
         >
           <div className="form1">
             <div className="name">
@@ -66,26 +71,27 @@ const StudenInfo = () => {
               <input
                 type="text"
                 name="name1"
-                value={data.name1}
-                onChange={handle}
-                id=""
+                value={form.name1}
+                onChange={(e) => handleChange(e)}
+                autoComplete="off"
+                
               />
               <label htmlFor="">Name 2</label>
               <input
                 type="text"
                 name="name2"
-                value={data.name2}
-                onChange={handle}
-                id=""
+                value={form.name2}
+                onChange={(e) => handleChange(e)}
+                autoComplete="off"
                 required
               />
               <label htmlFor="">Name 3</label>
               <input
                 type="text"
                 name="name3"
-                value={data.name3}
-                onChange={handle}
-                id=""
+                value={form.name3}
+                onChange={(e) => handleChange(e)}
+                autoComplete="off"
                 required
               />
             </div>
@@ -94,27 +100,27 @@ const StudenInfo = () => {
               <input
                 type="text"
                 name="roll1"
-                value={data.roll1}
-                onChange={handle}
-                id=""
+                value={form.roll1}
+                onChange={(e) => handleChange(e)}
+                autoComplete="off"
                 required
               />
               <label htmlFor="">Roll Number</label>
               <input
                 type="text"
                 name="roll2"
-                value={data.roll2}
-                onChange={handle}
-                id=""
+                value={form.roll2}
+                onChange={(e) => handleChange(e)}
+                autoComplete="off"
                 required
               />
               <label htmlFor="">Roll Number</label>
               <input
                 type="text"
                 name="roll3"
-                value={data.roll3}
-                onChange={handle}
-                id=""
+                value={form.roll3}
+                onChange={(e) => handleChange(e)}
+                autoComplete="off"
                 required
               />
             </div>
@@ -126,10 +132,9 @@ const StudenInfo = () => {
               <input
                 type="text"
                 name="tittle"
-                value={data.tittle}
-                onChange={handle}
+                value={form.title}
+                onChange={(e) => handleChange(e)}
                 autoComplete="off"
-                id=""
                 required
               />
             </div>
@@ -137,23 +142,20 @@ const StudenInfo = () => {
               <label htmlFor="">Description</label>
               <textarea
                 name="description"
-                id=""
-                value={data.description}
+                value={form.description}
                 cols="30"
                 rows="10"
-                onChange={handle}
+                onChange={(e) => handleChange(e)}
                 autoComplete="off"
+               
                 required
               ></textarea>
 
-              {/* <input
+              <input
                 type="file"
                 name="file"
-               
-                id=""
-                onChange={(e)=>setFileData(e.target.files[0])}
-              /> */}
-
+                onChange={(e)=>handleChange(e)}
+              />
             </div>
           </div>
           <button type="submit">Submit</button>

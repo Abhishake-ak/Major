@@ -1,0 +1,42 @@
+.mainWelcome{
+    width: 80%;
+    height: 100vh;
+    background-color: var(--first-color);
+    color: var(--grey-color);
+ 
+}
+
+.welcomeContainer{
+    padding: 20px;
+   
+ 
+
+}
+.welcomeBox {
+    position: absolute;
+    top: 30%;
+    background-color: var(--input-color);
+    border-radius: 4px;
+    padding: 26px;
+    border: 1px solid var(--border-color);
+    margin-top: 30px;
+    width: auto;
+    left: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ flex-direction: column;
+ 
+}
+
+.welcomeBox h2{
+    font-size: 3rem;
+    margin-bottom: 8px;
+    padding: 53px;
+}
+.welcomeBox p{
+    margin: 12px 0px;
+    margin: auto;
+    font-size: 2rem;
+}
+

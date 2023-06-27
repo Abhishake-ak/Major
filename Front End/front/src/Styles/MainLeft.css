@@ -1,6 +1,6 @@
 
 .main_left{
-    width: 340px;
+    width: 310px;
     height: 100vh;
     overflow: hidden;
     border-right: 1px solid var(--border-color);
@@ -17,7 +17,7 @@
     overflow-y: scroll;
     scrollbar-color: transparent;
     height: 100%;
-    padding: 30px 15px;
+    padding: 25px 0px;
 
 }
 
@@ -39,7 +39,7 @@
     justify-content: flex-start;
     
     align-items: center;
-    margin: 6px 0px;
+    margin: 10px 0px;
 
    
 
@@ -47,7 +47,7 @@
 
 .mainLeftLists .items h2{
     
-    font-size: 28px;
+    font-size: 27px;
     color: var(--grey-color);
 
 

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 
-const MainRight = (props) => {
+const MainRight = ({a,b}) => {
+  // console.log("prop a data: ",a);
   const [showComment, setComment] = useState(false);
   const [data, setdata] = useState({
     subject: "",
     commentDes: "",
     userID: "",
   });
+  
 
   // console.log(props.b);
 
@@ -17,46 +19,54 @@ const MainRight = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("prossss a",a._id);
+  
+    // console.log(data);
+    
 
-    setdata({ ...data, userID: props.a._id });
-    console.log(data);
-
-    await Axios.post("http://localhost:5000/comment", data)
+    await Axios.post("http://localhost:5000/comment", { ...data, userID: a._id })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       
 
 
     setComment(false);
   };
-
+// console.log();
   //
-
-  const day = new Date(props.a.createdAt).getDate();
-  const months = new Date(props.a.createdAt).getMonth();
-  const year = new Date(props.a.createdAt).getFullYear();
+console.log(a.file);
+  const day = new Date(a.createdAt).getDate();
+  const months = new Date(a.createdAt).getMonth();
+  const year = new Date(a.createdAt).getFullYear();
   // console.log(`${day}/${months}/${year}`);
 
   return (
     <div className="main_Right">
       <div className="mainRightContainer">
         <div className="box">
-          <h2 style={{ color: "white" }}>{props.a.tittle}</h2>
+          <h2 style={{ color: "white" }}>{a.tittle}</h2>
           <span className="createdBy">
             by{" "}
-            {`${props.a.name1} ${props.a.roll1} ${props.a.name2} ${props.a.roll2} ${props.a.name3} ${props.a.roll3} on ${day}/${months}/${year}`}
+            {`${a.name1} (${a.roll1})  ${a.name2} (${a.roll2})  ${a.name3} (${a.roll3}) on ${day}/${months}/${year}`}
           </span>
         </div>
 
-        <div className="box">{props.a.description}</div>
+        <div className="box"> <div>
+        {a.description} 
+          </div>
+          <br />
+        <br /> 
+        
+  {  a.file &&  <a href={a?.file.path.substring(25)} download={`${a.name1}-${a.name2}-${a.name3}`}>Download</a> }</div>
+        
         <br />
-        <br />
+
         <div className="line"></div>
 
         <div className="commetData">
           <h1>Comments By Mentor</h1>
-          {props.b?.map((i) => {
+          {b?.map((i) => {
             return (
               <div className="commentBox">
                 <h3>
@@ -91,13 +101,14 @@ const MainRight = (props) => {
                 <h3> Add Comment </h3>
                 <div className="line"></div>
                 <label htmlFor="">Subject</label>
-                <input type="text" name="subject" id="" onChange={handle} />
+                <input type="text" name="subject" id="" onChange={handle}  autoComplete="off"/>
                 <label htmlFor="">Comment</label>
                 <textarea
                   name="commentDes"
                   cols="1"
                   rows="5"
                   onChange={handle}
+                  autoComplete="off"
                 ></textarea>
                 <button type="submit">Add</button>
               </form>
